@@ -749,6 +749,8 @@ p {
     font-size: 16px;
     line-height: 1.62;
     text-align: center;
+
+    transition-duration: 250ms;
 }
 
 .filter-section {
@@ -829,14 +831,15 @@ p {
 
 .project-card-link:hover,
 .project-card-link:focus {
-    outline: 1px solid #EEEEEE;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    transition-duration: 250ms;
 }
 
 
 /* вспливашка с подробнім описание проекта в портфолио -------------------- */
 .project-pic {
     position: relative;
+    overflow: hidden;
 }
 
 .project-pic .project-info {
@@ -846,6 +849,8 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
+
+    overflow: auto;
 
     padding-left: 24px;
     padding-right: 24px;
@@ -858,14 +863,18 @@ p {
     letter-spacing: 0.03em;
     color: var(--white-text);
 
+
     background: rgba(33, 150, 243, 0.9);
 }
 
 .project-pic .project-info {
-    opacity: 0;
+    transform: translate(0, 100%);
+    overflow: hidden;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card-link:hover .project-pic .project-info,
 .project-card-link:focus .project-pic .project-info {
-    opacity: 1;
+    transform: translate(0, 0);
 }
